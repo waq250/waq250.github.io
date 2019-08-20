@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>【详细介绍】如何hexo+github搭建自己的个人博客 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近想搭建属于自己的博客，看了下网上的教程，发现了很多坑，虽然最后一一解决，但还是浪费了不少时间。希望看完我这篇的文章的同学，可以少走点坑。不会搭建ssh的同学可以看我上篇博客。 前期准备1，git（网上有下载的），我以前下过具体步骤应该不难，直接安装即可2，Node.js 的安装（我下的是9.70）算比较新的，我看很多博客都教的是4.0版本。下载地址：https://nodejs.org/dow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【详细介绍】如何hexo+github搭建自己的个人博客">
+<meta property="og:url" content="http://yoursite.com/2019/08/20/secondtry/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近想搭建属于自己的博客，看了下网上的教程，发现了很多坑，虽然最后一一解决，但还是浪费了不少时间。希望看完我这篇的文章的同学，可以少走点坑。不会搭建ssh的同学可以看我上篇博客。 前期准备1，git（网上有下载的），我以前下过具体步骤应该不难，直接安装即可2，Node.js 的安装（我下的是9.70）算比较新的，我看很多博客都教的是4.0版本。下载地址：https://nodejs.org/dow">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811104042477.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811105505481.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811110142932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811110437213.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019081111065121.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811110849518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/201908111117534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811112128917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811112709589.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-08-20T00:25:03.075Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【详细介绍】如何hexo+github搭建自己的个人博客">
+<meta name="twitter:description" content="最近想搭建属于自己的博客，看了下网上的教程，发现了很多坑，虽然最后一一解决，但还是浪费了不少时间。希望看完我这篇的文章的同学，可以少走点坑。不会搭建ssh的同学可以看我上篇博客。 前期准备1，git（网上有下载的），我以前下过具体步骤应该不难，直接安装即可2，Node.js 的安装（我下的是9.70）算比较新的，我看很多博客都教的是4.0版本。下载地址：https://nodejs.org/dow">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190811104042477.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-secondtry" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/20/secondtry/" class="article-date">
+  <time datetime="2019-08-20T00:18:47.945Z" itemprop="datePublished">2019-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【详细介绍】如何hexo+github搭建自己的个人博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近想搭建属于自己的博客，看了下网上的教程，发现了很多坑，虽然最后一一解决，但还是浪费了不少时间。希望看完我这篇的文章的同学，可以少走点坑。<br>不会搭建ssh的同学可以看我上篇博客。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1，git（网上有下载的），我以前下过具体步骤应该不难，直接安装即可<br>2，Node.js 的安装（我下的是9.70）算比较新的，我看很多博客都教的是4.0版本。<br>下载地址：<a href="https://nodejs.org/download/release/v9.7.0/" target="_blank" rel="noopener">https://nodejs.org/download/release/v9.7.0/</a><br>3，gitHub账户的配置：（需要一个邮箱即可，建议不要校内邮箱，验证码可能会拦截）<br>注册网址：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br><img src="https://img-blog.csdnimg.cn/20190811104042477.png" alt="下好后，打开命令管理器，属于以下命令，如图就是表明安装成功"><br>命令：<br>npm -v<br>node -v<br>git –version</p>
+<h2 id="环境配置与操作步骤"><a href="#环境配置与操作步骤" class="headerlink" title="环境配置与操作步骤"></a>环境配置与操作步骤</h2><h3 id="1，hexo的安装"><a href="#1，hexo的安装" class="headerlink" title="1，hexo的安装"></a>1，hexo的安装</h3><p>在桌面上鼠标右键，点击git bash here（安装好git应该都有）<br>输入指令：<br>npm install -g hexo-cli<br>结果如下图：<br><img src="https://img-blog.csdnimg.cn/20190811105505481.png" alt="在这里插入图片描述"></p>
+<h3 id="2，hexo的初始化"><a href="#2，hexo的初始化" class="headerlink" title="2，hexo的初始化"></a>2，hexo的初始化</h3><p>在你的盘中新建个文件夹，在文件夹内点击鼠标右键，点击git bash here。输入以下命令：<br>hexo init<br>初始化化文件夹，文件夹内结果如图：<br><img src="https://img-blog.csdnimg.cn/20190811110142932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>输入：<br>hexo install<br>（如果出现下图，说明你以前安装过了，不用管）<br><img src="https://img-blog.csdnimg.cn/20190811110437213.png" alt="在这里插入图片描述"><br> 再输入：<br> npm install hexo-deployer-git<br>安装插件</p>
+<h3 id="3，github设置"><a href="#3，github设置" class="headerlink" title="3，github设置"></a>3，github设置</h3><p>打开github网址，登录个人账户。<br><a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br><img src="https://img-blog.csdnimg.cn/2019081111065121.png" alt="在这里插入图片描述"><br>点击第一个 new respository<br><img src="https://img-blog.csdnimg.cn/20190811110849518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>大家按照我的进行勾选即可。在第一个创建respository name 下记住：<br>必须后面的后缀名必须有.github.io。前面你随便填<br>创建完后，如下图：<br><img src="https://img-blog.csdnimg.cn/201908111117534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>复制自己的ssh网址，就是git@那一行<br>打开_config.yml<br><img src="https://img-blog.csdnimg.cn/20190811112128917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>修改以下代码：<br>deploy:<br>  type: git<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:waq250/waq530.github.io.git<br>  branch: master<br>  第三行，替换成自己的即可，保存<br>  最后在git bush master 输入<br>  hexo g -d<br>  即可。<br>  就可以出现以下结果。<br>  【waq250是我以前创建的，你们的网址根据你们自己命名会有所区别】<img src="https://img-blog.csdnimg.cn/20190811112709589.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/20/secondtry/" data-id="cjzj389ap0000h8pk6cjvb4kz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/20/thirdtry/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【学习向】（图文详解）美化个人csdn和个人网页博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/10/firsttry/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【知识向】如何上传文件到github和ssh配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/20/thirdtry/">【学习向】（图文详解）美化个人csdn和个人网页博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/20/secondtry/">【详细介绍】如何hexo+github搭建自己的个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/10/firsttry/">【知识向】如何上传文件到github和ssh配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/10/hello-world/">你好，世界！我来了</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -5,33 +5,31 @@
   
 
   
-  <title>first try | Hexo</title>
+  <title>【知识向】如何上传文件到github和ssh配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="上一篇介绍了如何创建属于自己的博客，这篇开始教大家如何美化自己的博客。 一，工具准备 个人博客（上篇教程说了） 注册csdn账号，打开markdown编辑器二，简单命令 一级标题，二级标题等设立命令是：输入# 加上空格。一个#是一级标题。二个#是二级标题，三级标题类似。如下图 写列表   无序列表：减号-加上空格  有序列表：数字加上英文句号加上空格：    插入图片   第一种方法：！加上[]加">
+  <meta name="description" content="科技的发展在于交流，我最近搞了下如何上传文件到github，觉得很有意思，希望看过这篇的人也能学会。 一，前提准备1，git安装2，github账号注册这两步我就不多说了，很简单 二，上传文件到github1，github创立项目点击new repository。出现以下画面，按我的配置即可。命名可以根据自己喜好命 2，ssh连接在桌面上右键，再点击git bash here，会出现命令管理器输入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first try">
+<meta property="og:title" content="【知识向】如何上传文件到github和ssh配置">
 <meta property="og:url" content="http://yoursite.com/2019/08/10/firsttry/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="上一篇介绍了如何创建属于自己的博客，这篇开始教大家如何美化自己的博客。 一，工具准备 个人博客（上篇教程说了） 注册csdn账号，打开markdown编辑器二，简单命令 一级标题，二级标题等设立命令是：输入# 加上空格。一个#是一级标题。二个#是二级标题，三级标题类似。如下图 写列表   无序列表：减号-加上空格  有序列表：数字加上英文句号加上空格：    插入图片   第一种方法：！加上[]加">
+<meta property="og:description" content="科技的发展在于交流，我最近搞了下如何上传文件到github，觉得很有意思，希望看过这篇的人也能学会。 一，前提准备1，git安装2，github账号注册这两步我就不多说了，很简单 二，上传文件到github1，github创立项目点击new repository。出现以下画面，按我的配置即可。命名可以根据自己喜好命 2，ssh连接在桌面上右键，再点击git bash here，会出现命令管理器输入">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813102844176.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813103153478.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813103440653.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813103530746.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813104318252.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813105036614.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813105257574.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813105709284.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813110502550.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813110706211.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813111003394.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813111719823.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190813112322995.png">
-<meta property="og:updated_time" content="2019-08-13T03:26:40.825Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811182819534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811180535340.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811181212937.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811181324759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811183100644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/201908111843487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811184425997.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811185249729.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811185400661.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811190021159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190811190811370.png">
+<meta property="og:updated_time" content="2019-08-20T00:23:41.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first try">
-<meta name="twitter:description" content="上一篇介绍了如何创建属于自己的博客，这篇开始教大家如何美化自己的博客。 一，工具准备 个人博客（上篇教程说了） 注册csdn账号，打开markdown编辑器二，简单命令 一级标题，二级标题等设立命令是：输入# 加上空格。一个#是一级标题。二个#是二级标题，三级标题类似。如下图 写列表   无序列表：减号-加上空格  有序列表：数字加上英文句号加上空格：    插入图片   第一种方法：！加上[]加">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190813102844176.png">
+<meta name="twitter:title" content="【知识向】如何上传文件到github和ssh配置">
+<meta name="twitter:description" content="科技的发展在于交流，我最近搞了下如何上传文件到github，觉得很有意思，希望看过这篇的人也能学会。 一，前提准备1，git安装2，github账号注册这两步我就不多说了，很简单 二，上传文件到github1，github创立项目点击new repository。出现以下画面，按我的配置即可。命名可以根据自己喜好命 2，ssh连接在桌面上右键，再点击git bash here，会出现命令管理器输入">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190811182819534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -92,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      first try
+      【知识向】如何上传文件到github和ssh配置
     </h1>
   
 
@@ -100,52 +98,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>上一篇介绍了如何创建属于自己的博客，这篇开始教大家如何美化自己的博客。</p>
-<h2 id="一，工具准备"><a href="#一，工具准备" class="headerlink" title="一，工具准备"></a>一，工具准备</h2><ol>
-<li>个人博客（上篇教程说了）</li>
-<li>注册csdn账号，打开markdown编辑器<br><img src="https://img-blog.csdnimg.cn/20190813102844176.png" alt="在这里插入图片描述"><h2 id="二，简单命令"><a href="#二，简单命令" class="headerlink" title="二，简单命令"></a>二，简单命令</h2></li>
-<li>一级标题，二级标题等设立<br>命令是：输入# 加上空格。一个#是一级标题。二个#是二级标题，三级标题类似。如下图<br><img src="https://img-blog.csdnimg.cn/20190813103153478.png" alt="在这里插入图片描述"></li>
-<li>写列表</li>
-</ol>
-<ul>
-<li>无序列表：减号-加上空格</li>
-<li><img src="https://img-blog.csdnimg.cn/20190813103440653.png" alt="在这里插入图片描述"></li>
-<li>有序列表：数字加上英文句号加上空格：</li>
-<li><img src="https://img-blog.csdnimg.cn/20190813103530746.png" alt="在这里插入图片描述"></li>
-</ul>
-<ol start="3">
-<li>插入图片</li>
-</ol>
-<ul>
-<li>第一种方法：<br>！加上[]加上()。<br>()里放入图片的地址，[]里放入图片的描述。</li>
-<li>第二种方法：<br>复制粘贴图片也可以。<br><img src="https://img-blog.csdnimg.cn/20190813104318252.png" alt="在这里插入图片描述"></li>
-</ul>
-<ol start="4">
-<li>跳转链接<br>[]加上():[]里是显示的文字，（）里是显示的网址<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题链接</a><br><img src="https://img-blog.csdnimg.cn/20190813105036614.png" alt="在这里插入图片描述"></li>
-<li>文字加粗，斜体<br>两个<em>是加粗<br>一个</em>是斜体</li>
-</ol>
-<p><strong>加粗</strong><br><em>斜体</em><br><img src="https://img-blog.csdnimg.cn/20190813105257574.png" alt="在这里插入图片描述"></p>
-<ol start="6">
-<li><p>颜色，字体改变<br>align：文字的位置，我是居中<br>face：字体<br>size:字号大小<br>color：颜色<br><img src="https://img-blog.csdnimg.cn/20190813105709284.png" alt="2"></p>
-<p align="middle"><font face="微软雅黑" color="red" size="28">  try</font></p>
-</li>
-<li><p>引用</p>
-<blockquote>
-<p>天道酬勤</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20190813110502550.png" alt="加上空格："></p>
-<h2 id="三，博客引用"><a href="#三，博客引用" class="headerlink" title="三，博客引用"></a>三，博客引用</h2><ol>
-<li>找到下图位置，新建个md文件，我是firsttry<br><img src="https://img-blog.csdnimg.cn/20190813110706211.png" alt="在这里插入图片描述"></li>
-<li>打开新建的md文件，复制编辑器的内容，粘贴进去。<br><img src="https://img-blog.csdnimg.cn/20190813111003394.png" alt="在这里插入图片描述"><br>添加前三行，作为索引目录。<br>保存文件。</li>
-<li>右键打开git bash here ，输入以下指令：<br>hexo g -d<br>此时大家的第二篇博客就部署好了。<br><img src="https://img-blog.csdnimg.cn/20190813111719823.png" alt="在这里插入图片描述"></li>
-<li>更改主题</li>
-</ol>
-<ul>
-<li>更改默认主题<br>打开，第二个文件，自己根据里面的代码修改。<br><img src="https://img-blog.csdnimg.cn/20190813112322995.png" alt="在这里插入图片描述"></li>
-<li>更换新主题<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>打开上面网址。根据自己的喜欢进行更改。</li>
-</ul>
+        <p>科技的发展在于交流，我最近搞了下如何上传文件到github，觉得很有意思，希望看过这篇的人也能学会。</p>
+<h2 id="一，前提准备"><a href="#一，前提准备" class="headerlink" title="一，前提准备"></a>一，前提准备</h2><p>1，git安装<br>2，github账号注册<br>这两步我就不多说了，很简单</p>
+<h2 id="二，上传文件到github"><a href="#二，上传文件到github" class="headerlink" title="二，上传文件到github"></a>二，上传文件到github</h2><h3 id="1，github创立项目"><a href="#1，github创立项目" class="headerlink" title="1，github创立项目"></a>1，github创立项目</h3><p>点击new repository。出现以下画面，按我的配置即可。命名可以根据自己喜好命<br><img src="https://img-blog.csdnimg.cn/20190811182819534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="2，ssh连接"><a href="#2，ssh连接" class="headerlink" title="2，ssh连接"></a>2，ssh连接</h3><p>在桌面上右键，再点击git bash here，会出现命令管理器<br>输入下面指令：<br>ssh-keygen<br>【注意：第一次安装，记得输入指令后，停顿时要按回车键才会进行下一步】<br><img src="https://img-blog.csdnimg.cn/20190811180535340.png" alt="在这里插入图片描述"><br>根据生成的.ssh文件夹路径，寻找到.ssh文件，打开id-rsa.pub文件<br>【可以直接搜索id-rsa.pub文件】<br><img src="https://img-blog.csdnimg.cn/20190811181212937.png" alt="在这里插入图片描述"><br>复制里面的内容<br>打开github，登录个人账号<br>在个人中心里<br>点击setting<br>再点击SSH and GPG keys<br>会出现如下界面：<br>最后点击  new ssh keys 绿色按钮<br>把自己刚才复制的内容进行粘贴即可。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190811181324759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3，确定是否连接成功"><a href="#3，确定是否连接成功" class="headerlink" title="3，确定是否连接成功"></a>3，确定是否连接成功</h3><p>打开自己新建的项目，我的是try。<br>出现以下图<br><img src="https://img-blog.csdnimg.cn/20190811183100644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>新建个文件夹，在文件夹内右键，再点击git bash here，会出现命令管理器。输入以下指令：<br><img src="https://img-blog.csdnimg.cn/201908111843487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>运行后：文件夹内容如图：<br><img src="https://img-blog.csdnimg.cn/20190811184425997.png" alt="在这里插入图片描述"><br>readme.md文件已经下到本地，说明连接成功<br>【注意：对于新手，最好在新文件夹里操作，不然会出现git分支错误。】</p>
+<h3 id="4，上传文件"><a href="#4，上传文件" class="headerlink" title="4，上传文件"></a>4，上传文件</h3><p>把想传输的文件复制到在该文件夹下，右键，再点击git bash here，会出现命令管理器。输入以下指令：<br><img src="https://img-blog.csdnimg.cn/20190811185249729.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190811185400661.png" alt="在这里插入图片描述"><br>然后我们打卡自己github项目，刷新下。就可以看到你的项目已经被推送上去了。</p>
+<h3 id="5，注意"><a href="#5，注意" class="headerlink" title="5，注意"></a>5，注意</h3><p><img src="https://img-blog.csdnimg.cn/20190811190021159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>如果出现以上问题，请输入提示中的run下面的两行代码，就可以解决。<br><img src="https://img-blog.csdnimg.cn/20190811190811370.png" alt="在这里插入图片描述"><br>传输文件过大，改下postBuffer值就好。</p>
+<h2 id="三，下篇内容"><a href="#三，下篇内容" class="headerlink" title="三，下篇内容"></a>三，下篇内容</h2><p>我将教大家如何搭建属于自己的个人博客。</p>
 
       
     </div>
@@ -158,6 +119,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/08/20/secondtry/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【详细介绍】如何hexo+github搭建自己的个人博客
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -199,7 +169,15 @@
       <ul>
         
           <li>
-            <a href="/2019/08/10/firsttry/">first try</a>
+            <a href="/2019/08/20/thirdtry/">【学习向】（图文详解）美化个人csdn和个人网页博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/20/secondtry/">【详细介绍】如何hexo+github搭建自己的个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/10/firsttry/">【知识向】如何上传文件到github和ssh配置</a>
           </li>
         
           <li>
