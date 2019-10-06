@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>【学习向】matlab 简单运用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近对matlab有些遗忘，就学习了下，发现挺有趣的。我就挑几个比较偏的知识点进行讲述。也希望自己以后有机会能用得上。 一，目录一，安装文件（补丁要搞对）二，调用函数.m文件三，simulink仿真和算法的建模四，matlab和c接口调用 二，安装文件安装方法很简单，我这里推荐matlab 2018b，下面破解文件亲测好用破解文件 三，调试.m文件借用网上例子说明：stat.m文件定义函数  fu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习向】matlab 简单运用">
+<meta property="og:url" content="http://yoursite.com/2019/10/06/matlab/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近对matlab有些遗忘，就学习了下，发现挺有趣的。我就挑几个比较偏的知识点进行讲述。也希望自己以后有机会能用得上。 一，目录一，安装文件（补丁要搞对）二，调用函数.m文件三，simulink仿真和算法的建模四，matlab和c接口调用 二，安装文件安装方法很简单，我这里推荐matlab 2018b，下面破解文件亲测好用破解文件 三，调试.m文件借用网上例子说明：stat.m文件定义函数  fu">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006111526349.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006111914391.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006112042464.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006112155676.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006112219553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006112419970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006194300267.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191006194553498.png">
+<meta property="og:updated_time" content="2019-10-06T11:53:39.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【学习向】matlab 简单运用">
+<meta name="twitter:description" content="最近对matlab有些遗忘，就学习了下，发现挺有趣的。我就挑几个比较偏的知识点进行讲述。也希望自己以后有机会能用得上。 一，目录一，安装文件（补丁要搞对）二，调用函数.m文件三，simulink仿真和算法的建模四，matlab和c接口调用 二，安装文件安装方法很简单，我这里推荐matlab 2018b，下面破解文件亲测好用破解文件 三，调试.m文件借用网上例子说明：stat.m文件定义函数  fu">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191006111526349.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-matlab" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/06/matlab/" class="article-date">
+  <time datetime="2019-10-06T11:52:23.128Z" itemprop="datePublished">2019-10-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【学习向】matlab 简单运用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近对matlab有些遗忘，就学习了下，发现挺有趣的。我就挑几个比较偏的知识点进行讲述。也希望自己以后有机会能用得上。</p>
+<h1 id="一，目录"><a href="#一，目录" class="headerlink" title="一，目录"></a>一，目录</h1><p>一，安装文件（补丁要搞对）<br>二，调用函数.m文件<br>三，simulink仿真和算法的建模<br>四，matlab和c接口调用</p>
+<h1 id="二，安装文件"><a href="#二，安装文件" class="headerlink" title="二，安装文件"></a>二，安装文件</h1><p>安装方法很简单，我这里推荐matlab 2018b，下面破解文件亲测好用<br><a href="https://download.csdn.net/download/qq_40581789/10970461" target="_blank" rel="noopener">破解文件</a></p>
+<h1 id="三，调试-m文件"><a href="#三，调试-m文件" class="headerlink" title="三，调试.m文件"></a>三，调试.m文件</h1><p>借用网上例子说明：<br>stat.m文件定义函数</p>
+<blockquote>
+<p>function [mean,st]=stat(x)%定义【返回变量列表】=函数名（输入变量列表）<br>[m,n]=size(x);<br>if m ==1<br>    m=n;<br>end<br>mean=sum(x)/m;<br>st=sqrt(sum(x.^2)/m-mean.^2);</p>
+</blockquote>
+<p>untitled.m文件进行调用</p>
+<blockquote>
+<p>clc;<br>z=[2,3];<br>[a,b]=stat(z)%调用函数stat运行 </p>
+</blockquote>
+<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/20191006111526349.png" alt="在这里插入图片描述"><br>善于调用.m文件可以简化主代码，代码整洁。</p>
+<h1 id="三，simulink仿真和算法的建模"><a href="#三，simulink仿真和算法的建模" class="headerlink" title="三，simulink仿真和算法的建模"></a>三，simulink仿真和算法的建模</h1><p>借用书上的例子<br>simulink有两个功能：</p>
+<ol>
+<li>电路仿真<br><img src="https://img-blog.csdnimg.cn/20191006111914391.png" alt="在这里插入图片描述"><br>2018的matlab需要这里入：<br>然后选择blank model<br><img src="https://img-blog.csdnimg.cn/20191006112042464.png" alt="在这里插入图片描述"><br>这里可以放入模块。<br>案例：<br><img src="https://img-blog.csdnimg.cn/20191006112155676.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191006112219553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里用了一个电源模块，一个增益模块，一个示波器。<br>电路仿真有助于电子技术开发。</li>
+<li>算法建模<br>案例：求x’’+0.2x’+0.4x=0<br><img src="https://img-blog.csdnimg.cn/20191006112419970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<p>用了拉氏变换仿真的结果。用了两个增益模块，两个积分模块和一个求和模块。第二个积分模块初始值设为1。输出结果：<br><img src="https://img-blog.csdnimg.cn/20191006194300267.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这个可以用算法建模</p>
+<h1 id="四，matlab和c接口调用"><a href="#四，matlab和c接口调用" class="headerlink" title="四，matlab和c接口调用"></a>四，matlab和c接口调用</h1><p>我们平时习惯用c语言，matlab支持调用c语言封装的函数。<br>用网上案例：<br>用任意一个编辑器生成.c文件：<br>文件名：mexSimpleDemo.c</p>
+<blockquote>
+<p>#include “mex.h”    //头文件必须包含mex.h<br>double mexSimpleDemo(double *y,double a,double b);           //C语言算法程序声明，在最后调用时，第一 个参数是返回结果<br>//c语言到matlab变换，以mexFunction命名<br>void mexFunction(int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[])<br>{<br>    double *y;<br>    double m,n;<br>    //获取输入变量的数值大小<br>    m=mxGetScalar(prhs[0]);<br>    n=mxGetScalar(prhs[1]);<br>    //获取输出变量的指针<br>    plhs[0]=mxCreateDoubleMatrix(1,1,mxREAL);<br>    y=mxGetPr(plhs[0]);<br>    //调用子函数<br>    mexSimpleDemo(y,m,n);<br>}<br>//C语言函数<br>double mexSimpleDemo(double *y,double a,double b)<br>{<br>    return *y=(a&gt;b)?a:b;<br>}</p>
+</blockquote>
+<p>matlab中的.m文件代码如下：</p>
+<blockquote>
+<p>clc;<br>mex mexSimpleDemo.c;<br>a=mexSimpleDemo(5,3)</p>
+</blockquote>
+<p>结果如图：<br><img src="https://img-blog.csdnimg.cn/20191006194553498.png" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/06/matlab/" data-id="ck1exi9c5000094pkdcrzbgol" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/22/4day/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【学习向 】mysql基础知识整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/06/matlab/">【学习向】matlab 简单运用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/4day/">【学习向 】mysql基础知识整理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/20/thirdtry/">【学习向】（图文详解）美化个人csdn和个人网页博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/20/secondtry/">【详细介绍】如何hexo+github搭建自己的个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/10/firsttry/">【知识向】如何上传文件到github和ssh配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
