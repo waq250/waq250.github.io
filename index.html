@@ -84,13 +84,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近对matlab有些遗忘，就学习了下，发现挺有趣的。我就挑几个比较偏的知识点进行讲述。也希望自己以后有机会能用得上。</p>
+        <p>  最近对matlab有些遗忘，就学习了下，发现挺有趣的。我就挑几个比较偏的知识点进行讲述。也希望自己以后有机会能用得上。</p>
 <h1 id="一，目录"><a href="#一，目录" class="headerlink" title="一，目录"></a>一，目录</h1><p>一，安装文件（补丁要搞对）<br>二，调用函数.m文件<br>三，simulink仿真和算法的建模<br>四，matlab和c接口调用</p>
 <h1 id="二，安装文件"><a href="#二，安装文件" class="headerlink" title="二，安装文件"></a>二，安装文件</h1><p>安装方法很简单，我这里推荐matlab 2018b，下面破解文件亲测好用<br><a href="https://download.csdn.net/download/qq_40581789/10970461" target="_blank" rel="noopener">破解文件</a></p>
 <h1 id="三，调试-m文件"><a href="#三，调试-m文件" class="headerlink" title="三，调试.m文件"></a>三，调试.m文件</h1><p>借用网上例子说明：<br>stat.m文件定义函数</p>
-<p>function [mean,st]=stat(x)%定义【返回变量列表】=函数名（输入变量列表）<br>[m,n]=size(x);<br>if m ==1<br>    m=n;<br>end<br>mean=sum(x)/m;<br>st=sqrt(sum(x.^2)/m-mean.^2);</p>
+<blockquote>
+<p>function [mean,st]=stat(x)%定义【返回变量列表】=函数名（输入变量列表）<br>[m,n]=size(x);<br>if m ==1<br>m=n;<br>end<br>mean=sum(x)/m;<br>st=sqrt(sum(x. 2)/m-mean.2);</p>
+</blockquote>
 <p>untitled.m文件进行调用</p>
+<blockquote>
 <p>clc;<br>z=[2,3];<br>[a,b]=stat(z)%调用函数stat运行 </p>
+</blockquote>
 <p>运行结果：<br><img src="https://img-blog.csdnimg.cn/20191006111526349.png" alt="在这里插入图片描述"><br>善于调用.m文件可以简化主代码，代码整洁。</p>
 <h1 id="三，simulink仿真和算法的建模"><a href="#三，simulink仿真和算法的建模" class="headerlink" title="三，simulink仿真和算法的建模"></a>三，simulink仿真和算法的建模</h1><p>借用书上的例子<br>simulink有两个功能：</p>
 <ol>
@@ -99,9 +103,13 @@
 </ol>
 <p>用了拉氏变换仿真的结果。用了两个增益模块，两个积分模块和一个求和模块。第二个积分模块初始值设为1。输出结果：<br><img src="https://img-blog.csdnimg.cn/20191006194300267.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dhcTI1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这个可以用算法建模</p>
 <h1 id="四，matlab和c接口调用"><a href="#四，matlab和c接口调用" class="headerlink" title="四，matlab和c接口调用"></a>四，matlab和c接口调用</h1><p>我们平时习惯用c语言，matlab支持调用c语言封装的函数。<br>用网上案例：<br>用任意一个编辑器生成.c文件：<br>文件名：mexSimpleDemo.c</p>
-<p>#include “mex.h”    //头文件必须包含mex.h<br>double mexSimpleDemo(double *y,double a,double b);           //C语言算法程序声明，在最后调用时，第一 个参数是返回结果<br>//c语言到matlab变换，以mexFunction命名<br>void mexFunction(int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[])<br>{<br>    double *y;<br>    double m,n;<br>    //获取输入变量的数值大小<br>    m=mxGetScalar(prhs[0]);<br>    n=mxGetScalar(prhs[1]);<br>    //获取输出变量的指针<br>    plhs[0]=mxCreateDoubleMatrix(1,1,mxREAL);<br>    y=mxGetPr(plhs[0]);<br>    //调用子函数<br>    mexSimpleDemo(y,m,n);<br>}<br>//C语言函数<br>double mexSimpleDemo(double *y,double a,double b)<br>{<br>    return *y=(a&gt;b)?a:b;<br>}</p>
+<blockquote>
+<p>#include “mex.h”    //头文件必须包含mex.h<br>double mexSimpleDemo(double *y,double a,double b);           //C语言算法程序声明，在最后调用时，第一 个参数是返回结果<br>//c语言到matlab变换，以mexFunction命名<br>void mexFunction(int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[])<br>{<br>double *y;<br>double m,n;<br>    //获取输入变量的数值大小<br>m=mxGetScalar(prhs[0]);<br>n=mxGetScalar(prhs[1]);<br>    //获取输出变量的指针<br>plhs[0]=mxCreateDoubleMatrix(1,1,mxREAL);<br> y=mxGetPr(plhs[0]);<br>    //调用子函数<br>mexSimpleDemo(y,m,n);<br>}<br>//C语言函数<br>double mexSimpleDemo(double *y,double a,double b)<br>{<br>return *y=(a&gt;b)?a:b;<br>}</p>
+</blockquote>
 <p>matlab中的.m文件代码如下：</p>
+<blockquote>
 <p>clc;<br>mex mexSimpleDemo.c;<br>a=mexSimpleDemo(5,3)</p>
+</blockquote>
 <p>结果如图：<br><img src="https://img-blog.csdnimg.cn/20191006194553498.png" alt="在这里插入图片描述"></p>
 
       
